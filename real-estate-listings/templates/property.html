@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Property Details{% endblock %}
+
+{% block content %}
+    <h1>{{ property.title }}</h1>
+
+    <div class="property-card">
+        <img src="{{ property.image_url }}" alt="Property Image" class="property-image">
+        <div class="property-details">
+            <p class="property-price">${{ property.price }}</p>
+            <p class="property-description">{{ property.description }}</p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Listings</a>
+            <a href="{{ url_for('edit_property', property_id=property.id) }}" class="btn btn-secondary">Edit</a>
+            <a href="{{ url_for('delete_property', property_id=property.id) }}" class="btn btn-danger">Delete</a>
+
+        </div>
+    </div>
+{% endblock %}
