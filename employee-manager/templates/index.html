@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Employee Manager{% endblock %}
+
+{% block content %}
+    <h1>Employee Management System</h1>
+    <a href="{{ url_for('add_employee') }}" class="btn btn-primary mb-3">Add Employee</a>
+    {% if employees %}
+    <table class="table table-light table-hover table-bordered border-light employee-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.position }}</td>
+                <td>{{ employee.department }}</td>
+                <td>{{ employee.salary }}</td>
+                <td>
+                    <a href="{{ url_for('edit_employee', employee_id=employee.id) }}" class="btn btn-info btn-sm">Edit</a>
+                    <a href="{{ url_for('delete_employee', employee_id=employee.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No employees found.</p>
+    {% endif %}
+{% endblock %}
