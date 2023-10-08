@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 # Set Working Directory
-module_path = os.path.dirname(os.path.realpath(__file__))
-os.chdir(module_path)
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
+os.chdir(BASE_DIR)
 
 # Initialize the Flask application
 app = Flask(__name__)
