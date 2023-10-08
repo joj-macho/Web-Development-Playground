@@ -3,12 +3,18 @@
 Welcome to the Web-Development-Playground repository! This repository contains Python programs related to web development.
 
 
-# Programs 🚀
+# Web Programs 🚀
 
-- [**program-1**](program-1/): Brief description of the program and its functionality.
+- [**book-manager**](book-manager/): Manage a collection of books with title, author, description, and rating.
+- [**contact-manager**](contact-manager/): Manage a contact list with name, email, and phone number.
+- [**employee-manager**](employee-manager/): Manage employee records with name, position, and email.
+- [**expense-tracker**](expense-tracker/): Record and manage expenses with description, amount, date, and category.
+- [**inventory-manager**](inventory-manager/): Manage an inventory with items, quantity, price, category, supplier, and transactions.
+- [**real-estate-listings**](real-estate-listings/): View, add, edit, and delete property listings with title, description, price, and image URL.
 
 
 ## Contribution Guidelines 🌟
+
 Feel free to contribute and add your Python programs or enhance existing ones. Please follow the [contribution guidelines](CONTRIBUTING.md) before making a pull request.
 
 
