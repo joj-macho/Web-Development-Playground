@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Book Manager{% endblock %}
+
+{% block content %}
+    <h1>Book Management System</h1>
+    <a href="{{ url_for('add_book') }}" class="btn btn-primary">Add Book</a>
+
+    {% if books %}
+        <h2>Book List</h2>
+        <table class="table table-light table-hover table-bordered border-light book-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Description</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.description }}</td>
+                    <td>{{ book.rating }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_book', book_id=book.id) }}" class="btn btn-info btn-sm">Edit</a>
+                        <a href="{{ url_for('delete_book', book_id=book.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No books found.</p>
+    {% endif %}
+{% endblock %}
