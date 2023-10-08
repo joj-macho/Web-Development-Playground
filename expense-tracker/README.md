@@ -16,9 +16,9 @@ The Expense Tracker Application is a web-based tool that allows users to record 
 
 - The program then creates various routes for different functionalities, these routes act as the controller, handling the interactions between the user and the model:
     - <strong>Index Route</strong> (<code>/</code>): Displays the list of employees.
-    - <strong>Add Contact Route</strong> (<code>/add</code>): Allows the user to add a new expense.
-    - <strong>Edit Contact Route</strong> (<code>/edit/int:id</code>): Allows the user to edit an existing expense.
-    - <strong>Delete Contact Route</strong> (<code>/delete_employee/int:id</code>): Allows the user to delete an existing expense.
+    - <strong>Add Expense Route</strong> (<code>/add</code>): Allows the user to add a new expense.
+    - <strong>Edit Expense Route</strong> (<code>/edit/int:id</code>): Allows the user to edit an existing expense.
+    - <strong>Delete Expense Route</strong> (<code>/delete_employee/int:id</code>): Allows the user to delete an existing expense.
 
 - The routes above render HTML templates that serve as the views, providing the user interface for the corresponding functionality. Users can interact with the application by filling out forms to add or edit expense details.
 

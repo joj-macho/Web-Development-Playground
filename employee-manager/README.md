@@ -17,9 +17,9 @@ The Employee Manager is a web application that allows users to manage employee i
 
 - The program then creates various routes for different functionalities, these routes act as the controller, handling the interactions between the user and the model:
     - <strong>Index Route</strong> (<code>/</code>): Displays the list of employees.
-    - <strong>Add Contact Route</strong> (<code>/add_employee</code>): Allows the user to add a new employees.
-    - <strong>Edit Contact Route</strong> (<code>/edit_employee/int:employee_id</code>): Allows the user to edit an existing employees.
-    - <strong>Delete Contact Route</strong> (<code>/delete_employee/int:employee_id</code>): Allows the user to delete an existing employees.
+    - <strong>Add Employee Route</strong> (<code>/add_employee</code>): Allows the user to add a new employees.
+    - <strong>Edit Employee Route</strong> (<code>/edit_employee/int:employee_id</code>): Allows the user to edit an existing employees.
+    - <strong>Delete Employee Route</strong> (<code>/delete_employee/int:employee_id</code>): Allows the user to delete an existing employees.
 
 - The routes above render HTML templates that serve as the views, providing the user interface for the corresponding functionality. Users can interact with the application by filling out forms to add or edit employee details.
 
