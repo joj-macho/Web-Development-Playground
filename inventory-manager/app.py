@@ -77,7 +77,7 @@ def edit_item(item_id):
             flash('Item Name and Quantity are required.', 'danger')
             return redirect(url_for('edit_item', item_id=item.id))
 
-        # Update the expense in the database
+        # Update the inventory in the database
         db.session.commit()
         flash('Item updated successfully!', 'info')
 

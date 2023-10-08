@@ -79,7 +79,7 @@ def edit_book(book_id):
             flash('Book Title and Author are required.', 'danger')
             return redirect(url_for('edit_book', book_id=book.id))
 
-        # Update the contact in the database
+        # Update the book in the database
         db.session.commit()
         flash('Book updated successfully!', 'info')
 
