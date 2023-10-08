@@ -10,7 +10,7 @@ os.chdir(module_path)
 app = Flask(__name__)
 
 # Configure the application with a secret key and database URI
-app.config['SECRET_KEY'] = 'a-random-secret-key'
+app.config['SECRET_KEY'] = 'a_random_secret_key'  # Replace 'a_random_secret_key' with a secure secret key
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///contacts.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
