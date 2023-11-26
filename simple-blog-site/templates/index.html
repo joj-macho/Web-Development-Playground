@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Blog Posts</h1>
+  {% for post in posts %}
+    <div class="card mb-3">
+      <div class="card-body">
+        <h3 class="card-title"><a href="{{ url_for('post', id=post.id) }}">{{ post.title }}</a></h3>
+        <p class="card-text text-muted">{{ post.date_created.strftime('%B %d, %Y') }}</p>
+        <p class="card-text">{{ post.body[:250] }}...</p>
+        <a href="{{ url_for('post', id=post.id) }}" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  {% endfor %}
+  <a href="{{ url_for('posts') }}" class="btn btn-info">All Blog Posts</a>
+{% endblock %}
