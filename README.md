@@ -11,6 +11,8 @@ Welcome to the Web-Development-Playground repository! This repository contains P
 - [**expense-tracker**](expense-tracker/): Record and manage expenses with description, amount, date, and category.
 - [**inventory-manager**](inventory-manager/): Manage an inventory with items, quantity, price, category, supplier, and transactions.
 - [**real-estate-listings**](real-estate-listings/): View, add, edit, and delete property listings with title, description, price, and image URL.
+- [**simple-blog**](simple-blog-site/): A basic blog web app with Flask and SQLAlchemy. Create, edit, and delete blog posts. Features include a homepage with post list and individual post pages.
+- [**to-do-application**](to-do-app/): To-do list web app with Flask and SQLAlchemy. Add, mark as complete or incomplete, and delete tasks.
 
 
 ## Contribution Guidelines 🌟
