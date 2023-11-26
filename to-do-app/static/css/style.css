@@ -1,0 +1,88 @@
+/* Add your custom styles here */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.task-table {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.task-table {
+    margin-top: 20px;
+}
+
+.task-table tr {
+    transition: #f8f9fa 0.2s ease-in-out;
+}
+
+.task-table th,
+.task-table td {
+    padding: 10px;
+    text-align: center;
+}
+
+.task-table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.task-table tr {
+    transition: #f8f9fa 0.2s ease-in-out;
+}
+
+.task-table tr:hover {
+    background-color: #f0f8ff;
+}
+
+.task-table tr.completed-task {
+    background-color: #d4edda; /* Light green for completed tasks */
+}
+
+.btn-sm {
+    margin-right: 5px;
+}
+
+/* Add FontAwesome icons styling */
+i.fas {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
