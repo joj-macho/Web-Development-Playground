@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 import os
+from pathlib import Path
 from datetime import datetime
 
+
 # Set Working Directory
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-os.chdir(BASE_DIR)
+BASE_DIRECTORY = Path(__file__).resolve().parent
+os.chdir(BASE_DIRECTORY)
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -18,7 +20,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Initialize the SQLAlchemy object to interact with the database
 db = SQLAlchemy(app)
 
-# Create an Expense class to represent the database model for employees
+# Expense class to represent the database model for employees
 class Expense(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(200), nullable=False)

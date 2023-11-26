@@ -1,13 +1,15 @@
 from flask import Flask, render_template, flash, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 import os
+from pathlib import Path
+
 
 # Set Working Directory
-BASE_DIR = os.path.dirname(os.path.realpath(__file__))
-os.chdir(BASE_DIR)
+BASE_DIRECTORY = Path(__file__).resolve().parent
+os.chdir(BASE_DIRECTORY)
 
 # Initialize the Flask application
-app = Flask(__name__)
+app = Flask(__name__)   
 
 # Configure the application with a secret key and database URI
 app.config['SECRET_KEY'] = 'a_random_secret_key'  # Replace 'a_random_secret_key' with a secure secret key
@@ -17,7 +19,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Initialize the SQLAlchemy object to interact with the database
 db = SQLAlchemy(app)
 
-# Create a Book class to represent the database model for books
+# Book class to represent the database model for books
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
@@ -62,7 +64,6 @@ def add_book():
         return redirect(url_for('index'))
     return render_template('add_book.html')
 
-
 @app.route('/edit_book/<int:book_id>', methods=['GET', 'POST'])
 def edit_book(book_id):
     '''Edit an existing contact.'''
@@ -85,7 +86,6 @@ def edit_book(book_id):
 
         return redirect(url_for('index'))
     return render_template('edit_book.html', book=book)
-
 
 @app.route('/delete_book/<int:book_id>')
 def delete_book(book_id):

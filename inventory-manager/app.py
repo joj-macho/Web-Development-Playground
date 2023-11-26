@@ -1,11 +1,12 @@
 from flask import Flask, render_template, flash, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 import os
+from pathlib import Path
+
 
 # Set Working Directory
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-os.chdir(BASE_DIR)
-
+BASE_DIRECTORY = Path(__file__).resolve().parent
+os.chdir(BASE_DIRECTORY)
 # Initialize the Flask application
 app = Flask(__name__)
 
@@ -17,7 +18,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Initialize the SQLAlchemy object to interact with the database
 db = SQLAlchemy(app)
 
-# Create an Item class to represent the database model for inventory
+# Item class to represent the database model for inventory
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
