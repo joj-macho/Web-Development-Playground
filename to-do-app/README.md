@@ -33,7 +33,7 @@ This program includes the following features:
 python app.py
 ```
 
-Visit `http://localhost:5000` in your web browser to access the blog.
+Visit `http://localhost:5000` in your web browser to access the To-Do application.
 
 The output of the program will look like this:
 
