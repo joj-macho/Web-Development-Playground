@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mb-4">Unit Converter</h1>
+
+    <div class="mt-4">
+        <h3>Available Units:</h3>
+        <p><strong>Length:</strong> Enter values with units like mm, cm, m, km, inch, foot, yard, mile.</p>
+        <p><strong>Mass:</strong> Enter values with units like g, kg, mg, lb, oz, ton.</p>
+    </div>
+
+    <form method="post" action="{{ url_for('convert') }}">
+        <div class="form-group">
+            <label for="category">Choose a Conversion Option:</label>
+            <select class="form-control" name="category" id="category">
+                <option value="length">Length</option>
+                <option value="mass">Mass</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="value">Enter the value to convert:</label>
+            <input type="number" class="form-control" name="value" required>
+        </div>
+        <div class="form-group">
+            <label for="unit_from">Unit to convert from:</label>
+            <input type="text" class="form-control" name="unit_from" required>
+            <small class="text-muted">e.g., mm, kg</small>
+        </div>
+        <div class="form-group">
+            <label for="unit_to">Unit to convert to:</label>
+            <input type="text" class="form-control" name="unit_to" required>
+            <small class="text-muted">e.g., cm, lb</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Convert</button>
+    </form>
+
+    {% if result %}
+        <div class="mt-4 alert alert-info">
+            <p>{{ result }}</p>
+        </div>
+    {% endif %}
+
+    {% if history %}
+    <div class="mt-4">
+        <h3>Conversion History</h3>
+        <ul class="list-group">
+            {% for conversion in history %}
+                <li class="list-group-item">
+                    {{ conversion.category }} {{ conversion.value }} {{ conversion.unit_from }} to {{ conversion.unit_to }} : {{ conversion.result }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+{% endblock %}
