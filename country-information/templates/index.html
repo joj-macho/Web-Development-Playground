@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Country Information{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-3">Countries Information</h1>
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Capital</th>
+                <th scope="col">Region</th>
+                <th scope="col">Population</th>
+                <th scope="col">Flag</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for country in countries %}
+                <tr>
+                    <td>{{ country.name.common }}</td>
+                    <td>{{ country.capital | join(', ') }}</td>
+                    <td>{{ country.region }}</td>
+                    <td>{{ country.population }}</td>
+                    <td><img src="{{ country.flags.png }}" alt="{{ country.name.common }}" width="30"></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
