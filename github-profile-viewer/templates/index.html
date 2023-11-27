@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}GitHub Profile Viewer{% endblock %}
+
+{% block content %}
+
+        <h1 class="mb-4 text-center">GitHub Profile Viewer</h1>
+
+        <form method="post" action="{{ url_for('get_user') }}" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="username" class="form-control" placeholder="Enter GitHub Username" required>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Get Profile</button>
+                </div>
+            </div>
+        </form>
+
+        {% if user %}
+            <div class="card mx-auto" style="max-width: 600px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{ user.user.avatar_url }}" class="card-img" alt="{{ user.user.name }}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body info">
+                            <h2 class="card-title">{{ user.user.name }}</h2>
+                            <p class="card-text">{{ user.user.bio }}</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">Followers: {{ user.user.followers }}</li>
+                                <li class="list-group-item">Following: {{ user.user.following }}</li>
+                                <li class="list-group-item">Repos: {{ user.user.public_repos }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mt-4 mb-3 text-center">Top Repositories</h3>
+            <ul class="list-group mx-auto" style="max-width: 600px;">
+                {% for repo in user.repos %}
+                    <li class="list-group-item repo"><a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+{% endblock %}
