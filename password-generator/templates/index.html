@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mb-4">Password Generator</h1>
+    
+    <form method="post" action="{{ url_for('generate_password') }}">
+        <div class="form-group">
+            <label for="length">Password Length:</label>
+            <input type="number" class="form-control" name="length" required>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="use_symbols">
+            <label class="form-check-label" for="use_symbols">Use Symbols</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="use_digits">
+            <label class="form-check-label" for="use_digits">Use Digits</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="use_uppercase">
+            <label class="form-check-label" for="use_uppercase">Use Uppercase</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Generate Password</button>
+    </form>
+
+    {% if password %}
+        <div class="mt-5 alert alert-info">
+            <h2 class="mb-3">Generated Password</h2>
+            <p>{{ password }}</p>
+        </div>
+    {% endif %}
+{% endblock %}
