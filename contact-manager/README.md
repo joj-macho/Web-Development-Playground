@@ -4,6 +4,7 @@
 
 The Contact Manager is a simple web application that allows users to manage their contacts. Users can view a list of contacts, add new contacts, edit existing contacts, and delete contacts. The application uses Flask for the backend and SQLite for the database to store contact information.
 
+This web application is an implementation of this [Simple Address Book CLI](https://github.com/joj-macho/Pythological-Playground/tree/main/converter), providing a more user-friendly interface for managing contacts.
 
 ## How it Works
 
