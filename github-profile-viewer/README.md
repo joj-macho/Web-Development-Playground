@@ -30,4 +30,4 @@ Visit `http://localhost:5000` in your web browser to access the app.
 
 Enter a GitHub username in the form, and the app will display the user's information. The output will look like this:
 
-![Blog Output](output/github-output.png)
+![Github Profile Output](output/github-output.png)
