@@ -33,4 +33,5 @@ The movie poster images used in this application are sourced from [The Movie Dat
 
 The output of the program will look like this:
 
-![Movie App Output](output/movie-output.gif)
+![Movie App Output](output/movies-output.png)
+![Movie App Output 2](output/movies-2-output.png)
