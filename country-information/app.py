@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, flash
 import requests
 
+# Initialize the Flask application
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'
+
+# Configure the application with a secret key and database URI
+app.config['SECRET_KEY'] = 'a_random_secret_key'  # Replace 'a_random_secret_key' with a secure secret key
 
 REST_COUNTRIES_API_URL = 'https://restcountries.com/v3.1/all'
 

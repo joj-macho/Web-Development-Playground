@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from pathlib import Path
 
-
 # Set Working Directory
 BASE_DIRECTORY = Path(__file__).resolve().parent
 os.chdir(BASE_DIRECTORY)
@@ -31,7 +30,6 @@ class Item(db.Model):
 # Create the database
 with app.app_context():
     db.create_all()
-
 
 @app.route('/')
 def index():
@@ -62,7 +60,6 @@ def add_item():
         return redirect(url_for('index'))
     return render_template('add_item.html')
 
-
 @app.route('/edit_item/<int:item_id>', methods=['GET', 'POST'])
 def edit_item(item_id):
     '''Edit an existing item.'''
@@ -84,7 +81,6 @@ def edit_item(item_id):
 
         return redirect(url_for('index'))
     return render_template('edit_item.html', item=item)
-
 
 @app.route('/delete_item/<int:item_id>')
 def delete_item(item_id):

@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, flash
 import string
 import secrets
 
-
 # Initialize the Flask application
 app = Flask(__name__)
 

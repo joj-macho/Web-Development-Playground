@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from pathlib import Path
 
-
 # Set Working Directory
 BASE_DIRECTORY = Path(__file__).resolve().parent
 os.chdir(BASE_DIRECTORY)
@@ -34,13 +33,11 @@ class Property(db.Model):
 with app.app_context():
     db.create_all()
 
-
 @app.route('/')
 def index():
     '''Display all propertly listings.'''
     listings = Property.query.all()
     return render_template('index.html', listings=listings)
-
 
 @app.route('/property/<int:property_id>')
 def property_detail(property_id):
@@ -51,7 +48,6 @@ def property_detail(property_id):
 
     flash('Property not found', 'danger')
     return redirect(url_for('index'))
-
 
 @app.route('/add_property', methods=['GET', 'POST'])
 def add_property():
@@ -72,7 +68,6 @@ def add_property():
 
     return render_template('add_property.html')
 
-
 @app.route('/edit_property/<int:property_id>', methods=['GET', 'POST'])
 def edit_property(property_id):
     '''Edit an existing existing.'''
@@ -91,7 +86,6 @@ def edit_property(property_id):
         return redirect(url_for('index'))
 
     return render_template('edit_property.html', property=property_data)
-
 
 @app.route('/delete_property/<int:property_id>', methods=['GET', 'POST'])
 def delete_property(property_id):

@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from pathlib import Path
 
-
 # Set Working Directory
 BASE_DIRECTORY = Path(__file__).resolve().parent
 os.chdir(BASE_DIRECTORY)
@@ -34,13 +33,11 @@ class Employee(db.Model):
 with app.app_context():
     db.create_all()
 
-
 @app.route('/')
 def index():
     '''Display all contacts.'''
     employees = Employee.query.all()
     return render_template('index.html', employees=employees)
-
 
 @app.route('/add_employee', methods=['GET', 'POST'])
 def add_employee():
@@ -65,7 +62,6 @@ def add_employee():
         return redirect(url_for('index'))
     return render_template('add_employee.html')
 
-
 @app.route('/edit_employee/<int:employee_id>', methods=['GET', 'POST'])
 def edit_employee(employee_id):
     '''Edit an existing employee.'''
@@ -88,7 +84,6 @@ def edit_employee(employee_id):
         return redirect(url_for('index'))
     return render_template('edit_employee.html', employee=employee)
 
-
 @app.route('/delete_employee/<int:employee_id>')
 def delete_employee(employee_id):
     '''Delete an employee.'''
@@ -97,6 +92,7 @@ def delete_employee(employee_id):
     db.session.commit()
     flash('Employee deleted successfully!', 'danger')
     return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)

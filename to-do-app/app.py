@@ -4,7 +4,6 @@ import os
 from pathlib import Path
 from datetime import datetime
 
-
 # Set Working Directory
 BASE_DIRECTORY = Path(__file__).resolve().parent
 os.chdir(BASE_DIRECTORY)
@@ -44,7 +43,6 @@ with app.app_context():
 
     db.session.bulk_save_objects(demo_tasks)
     db.session.commit()
-
 
 @app.route('/')
 def index():

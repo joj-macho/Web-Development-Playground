@@ -8,7 +8,6 @@ import os
 from pathlib import Path
 from datetime import datetime
 
-
 # Set Working Directory
 BASE_DIRECTORY = Path(__file__).resolve().parent
 os.chdir(BASE_DIRECTORY)
@@ -47,7 +46,6 @@ class Post(db.Model):
 # Create the database
 with app.app_context():
     db.create_all()
-
 
 @app.route('/')
 def index():

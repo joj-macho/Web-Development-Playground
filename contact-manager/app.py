@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from pathlib import Path
 
-
 # Set Working Directory
 BASE_DIRECTORY = Path(__file__).resolve().parent
 os.chdir(BASE_DIRECTORY)
@@ -33,13 +32,11 @@ class Contact(db.Model):
 with app.app_context():
     db.create_all()
 
-    
 @app.route('/')
 def index():
     '''Display all contacts.'''
     contacts = Contact.query.all()
     return render_template('index.html', contacts=contacts)
-
 
 @app.route('/add_contact', methods=['GET', 'POST'])
 def add_contact():
@@ -63,7 +60,6 @@ def add_contact():
         return redirect(url_for('index'))
     return render_template('add_contact.html')
 
-
 @app.route('/edit_contact/<int:contact_id>', methods=['GET', 'POST'])
 def edit_contact(contact_id):
     '''Edit an existing contact.'''
@@ -84,7 +80,6 @@ def edit_contact(contact_id):
         flash('Contact updated successfully!', 'info')
         return redirect(url_for('index'))
     return render_template('edit_contact.html', contact=contact)
-
 
 @app.route('/delete_contact/<int:contact_id>')
 def delete_contact(contact_id):

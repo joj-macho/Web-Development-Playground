@@ -4,7 +4,6 @@ import os
 from pathlib import Path
 from datetime import datetime
 
-
 # Set Working Directory
 BASE_DIRECTORY = Path(__file__).resolve().parent
 os.chdir(BASE_DIRECTORY)
@@ -34,7 +33,6 @@ class Expense(db.Model):
 # Create the database
 with app.app_context():
     db.create_all()
-
 
 @app.route('/')
 def index():
@@ -68,7 +66,6 @@ def add_expense():
         return redirect(url_for('index'))
     return render_template('add_expense.html')
 
-
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit_expense(id):
     '''Edit an existing expense.'''
@@ -95,7 +92,6 @@ def edit_expense(id):
         return redirect(url_for('index'))
     return render_template('edit_expense.html', expense=expense)
 
-
 @app.route('/delete/<int:id>')
 def delete_expense(id):
     '''Delete an expense.'''
@@ -104,6 +100,7 @@ def delete_expense(id):
     db.session.commit()
     flash('Expense deleted successfully!', 'danger')
     return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)

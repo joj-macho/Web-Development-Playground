@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, flash
 import requests
 
-
 # Initialize the Flask application
 app = Flask(__name__)
 

@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from pathlib import Path
 
-
 # Set Working Directory
 BASE_DIRECTORY = Path(__file__).resolve().parent
 os.chdir(BASE_DIRECTORY)
