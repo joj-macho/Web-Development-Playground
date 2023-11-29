@@ -8,22 +8,23 @@ This application serves as a web-based counterpart to the [CLI password generato
 
 ## How it Works
 
+- The Flask application is initialized and configured with a secret key.
+
+- The main route (`/`) renders the home page where users can input their preferences for the password.
+
+- The `/generate_password` route handles the form submission, generates a random password using the `secrets` module, and flashes a message for user feedback.
+
 - The Flask web application provides a user-friendly interface where users can input their preferences for password generation. It includes checkboxes for including symbols, digits, and uppercase letters.
 
-- **Password Generation**: When users submit the form, the server-side code processes the input, generates a random password based on the specified preferences, and displays the result on the same page.
+## How to Run the Application
 
-- **Error Handling**: Errors, such as invalid input or missing preferences, are handled using Flask's `flash` mechanism.
+- To run this application, make sure you have Python installed on your system.
+- Ensure that Flask is installed. If not, you can install it using pip: `pip install flask`
+- Navigate to the project directory.
+- Run the application in the terminal: `python3 app.py`
+- Open a web browser and navigate to `http://127.0.0.1:5000/` to access the Password Generator.
+- Use the search bar to look for specific movies.
 
-The Flask Password Generator web application is an alternative to the CLI version. Both versions share the same password generation logic, but the Flask implementation adds a user interface for ease of use.
-
-### How to Run the Application
-
-```bash
-python app.py
-```
-
-Visit `http://localhost:5000` in your web browser to access the Password Generator.
-
-The output of the program will look like this:
+The output will look like this:
 
 ![Password Output](output/password-output.gif)

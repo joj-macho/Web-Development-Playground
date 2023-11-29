@@ -1,22 +1,27 @@
-# Country Information Viewer
+# REST Countries Information Viewer
 
 ## Description
 
-The Country Information Viewer is a Flask web application that utilizes the REST Countries API to fetch and display information about all countries.
+The REST Countries Information Viewer is a web-based application built with Flask that retrieves information about countries from the REST Countries API. Users can view details about various countries, including their names, capitals, populations, and more. The application is designed to provide a simple and interactive way to explore country data.
 
 ## How it Works
 
-Various routes for different functionalities:
+- The Flask application is configured, and an instance of the application is created.
 
-- The home page is rendered using the `index()` function in `app.py`. This function retrieves country data from the REST Countries API using the `get_countries()` function and then renders the `index.html` template with the obtained country data.
+- The application uses the REST Countries API (`https://restcountries.com/v3.1/all`) to fetch information about all countries.
 
-- The `get_countries()` function sends a GET request to the REST Countries API to retrieve information about all countries. It handles exceptions that may occur during the API request and returns a list of country data.
+- The main route (`/`) is defined to handle requests and retrieve country data from the API. The data is then rendered in the home page template (`index.html`).
 
-- Make sure to have an active internet connection as the program relies on data from the REST Countries API. If an error occurs during data fetching, appropriate error messages will be displayed.
+- The `get_countries` function sends a GET request to the REST Countries API and retrieves information about all countries. It handles potential errors and flashes a message if there is an issue retrieving the data.
 
-## Program Input & Output
+## How to Run the Application
 
-When you run the program (`app.py`), Flask starts a development server, and you can access the application by visiting `http://127.0.0.1:5000/` in your web browser. The home page will display a list of countries.
+- To run this application, make sure you have Python installed on your system.
+- Ensure that Flask is installed. If not, you can install it using pip: `pip install flask`
+- Navigate to the project directory.
+- Run the application in the terminal: `python3 app.py`
+- Open a web browser and go to http://localhost:5000 to access the REST Countries Information Viewer.
+- The application will fetch data from the REST Countries API and display it on the home page.
 
 The output will look like this:
 

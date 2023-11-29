@@ -26,7 +26,6 @@ This program includes the following features:
 - **Add New Tasks:**
    - Users can add new tasks by clicking the "Add Task" button, which directs them to a form to input task details.
 
-
 ### How to Run the Application
 
 ```bash

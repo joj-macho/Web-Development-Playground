@@ -1,4 +1,4 @@
-# Contact Manager
+# Contact Manager Application
 
 ## Description
 
@@ -8,37 +8,26 @@ This web application is an implementation of this [Simple Address Book CLI](http
 
 ## How it Works
 
-- The program starts by importing the necessary modules and libraries (<code>Flask</code>, <code>SQLAlchemy</code>, <code>os</code>).
+- Start by setting up the Flask application including importing required modules, configuration for the database and creating an instance of the SQLAlchemy database.
 
-- Then the Flask application is set up, including configuration for the database and creating an instance of the SQLAlchemy database.
+- The `Contact` class is defined, representing the model of a contact with attributes like `name`, `phone`, and `email`.
 
-- The <code>Contact</code> class is defined, representing the model of a contact with attributes like <code>name</code>, <code>phone</code>, and <code>email</code>.
+- The SQLite database is created and the necessary table for contacts is defined.
 
-- The program then creates the SQLite database and the necessary table for contacts.
-
-- The program then creates various routes for different functionalities, these routes act as the controller, handling the interactions between the user and the model:
-    - <strong>Index Route</strong> (<code>/</code>): Displays the list of contacts.
-    - <strong>Add Contact Route</strong> (<code>/add_contact</code>): Allows the user to add a new contact.
-    - <strong>Edit Contact Route</strong> (<code>/edit_contact/int:contact_id</code>): Allows the user to edit an existing contact.
-    - <strong>Delete Contact Route</strong> (<code>/delete_contact/int:contact_id</code>): Allows the user to delete an existing contact.
+- Various routes are established to handle different functionalities:
+    - **Index Route** (`/`): Displays the list of contacts.
+    - **Add Contact Route** (`/add_contact`): Allows the user to add a new contact.
+    - **Edit Contact Route** (`/edit_contact/int:contact_id`): Allows the user to edit an existing contact.
+    - **Delete Contact Route** (`/delete_contact/int:contact_id`): Allows the user to delete an existing contact.
 
 - The routes above render HTML templates that serve as the views, providing the user interface for the corresponding functionality. Users can interact with the application by filling out forms to add or edit contacts.
 
-
-## How to Run the Program
+## How to Run the Application
 
 - To run this application, first you must ensure that you have Python installed on your system.
-
-- Ensure that you have <code>Flask</code> and <code>SQLAlchemy</code> installed on your system. If not, you can install them using pip:
-
-<pre>pip install flask flask_sqlalchemy</pre>
-
+- Ensure that you have `Flask` and `SQLAlchemy` installed on your system. If not, you can install them using pip: `pip install flask flask_sqlalchemy`
 - Go to the project directory.
-- Run the application on the terminal:
-<pre>python3 app.py</pre>
+- Run the application on the terminal: `python3 app.py`
+- Open a web browser and go to `http://localhost:5000` to access the Contact Manager. The output will look like this:
 
-- Open a web browser and go to http://localhost:5000 to access the Contact Manager. The output will look like this:
-
-<p align="center">
-  <img src="output/contact-output.gif" alt='Contact Output'>
-</p>
+![Contact Output](output/contact-output.gif)

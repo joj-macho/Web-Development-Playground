@@ -43,7 +43,6 @@ def get_movies(url):
         print(f"Error fetching movie data: {e}")
         return []
 
-
 @app.template_filter('rate_class')
 def rate_class(vote):
     '''Determines the CSS class for the movie rating based on the provided vote.'''

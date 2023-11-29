@@ -2,25 +2,29 @@
 
 ## Description
 
-The Weather App is a simple Flask web application that allows users to check the current weather in a city. It leverages the OpenWeatherMap API to fetch weather data and displays it alongside a background image that reflects the current weather condition. The application provides a visually appealing and informative way to stay updated on weather conditions.
+The Weather App is a simple Flask web application that allows users to check the current weather in a city. It uses the OpenWeatherMap API to fetch weather data and displays it alongside a background image that reflects the current weather condition.
 
 ## How It Works
 
-- **Homepage**: The user is initially presented with a search box on the homepage. They can enter the name of a city and submit the form.
+- The Flask application is initialized and configured with a secret key.
 
-- **Weather Information**: Upon submitting the form, the application fetches the weather information for the entered city using the OpenWeatherMap API. The weather details, including temperature, weather type, and min/max temperature, are displayed.
+- The OpenWeatherMap API key and base URL are defined as constants.
 
-- **Background Image**: The background image of the page changes dynamically based on the weather type. For instance, a clear sky will have a different background image compared to a rainy or cloudy sky.
+- Routes are established for the home page (`/`) and weather retrieval (`/weather`). The routes render HTML templates, allowing users to input cities and view weather information.
 
-### How to Run the Application
+- Functions such as `fetch_weather` and `get_weather_image_url` handle the retrieval of weather data and mapping of weather types to image URLs.
 
-```bash
-python app.py
-```
+## How to Run the Application
 
-Visit `http://localhost:5000` in your web browser to access the Weather Application.
+- Make sure you have a valid OpenWeatherMap API key.
+- To run this application, make sure you have Python installed on your system.
+- Ensure that Flask is installed. If not, you can install it using pip: `pip install flask`
+- Navigate to the project directory.
+- Run the application in the terminal: `python3 app.py`
+- Open a web browser and navigate to `http://127.0.0.1:5000/` to view access the Weather App.
+- Use the search bar to look for specific movies.
 
-The output of the program will look like this:
+The output will look like this:
 
 <p>
   <img src="output/london.png" alt='London Output'>

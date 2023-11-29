@@ -1,4 +1,4 @@
-# GitHub Profile Viewer
+# GitHub User Information Viewer
 
 ## Description
 
@@ -8,26 +8,23 @@ This app is a web-based alternative to the [GitHub Profile Viewer CLI program](h
 
 ## How it Works
 
-- **Homepage**: When you access the application, you'll see a simple homepage.
+- The Flask application is initialized and configured with a secret key.
 
-- **Search for a User**: Enter a GitHub username in the provided form and submit it.
+- The main route (`/`) renders the home page where users can input a GitHub username.
 
-- **User Information**: The app fetches data from the GitHub API for the entered username. If the user is found, it displays the user's profile information, including their name, bio, followers, following, and avatar.
+- The `/user` route handles the form submission, fetches GitHub user data using the GitHub API, and renders the home page with the user's information. If the user is found, it displays the user's profile information, including their name, bio, followers, following, and avatar.
 
-- **Top Repositories**: The app also fetches the user's top repositories (up to 10) and displays them as clickable links.
+- The `get_user_data` function sends HTTP requests to the GitHub API to retrieve user data and the user's top repositories. It handles errors and flashes messages for user feedback.
 
-- **Error Handling**: If the entered username is not found, the app shows an error message. If no username is provided, a warning message is displayed.
+## How to Run the Application
 
-## Program Input & Outputs
+- To run this application, make sure you have Python installed on your system.
+- Ensure that Flask is installed. If not, you can install it using pip: `pip install flask`
+- Navigate to the project directory.
+- Run the application in the terminal: `python3 app.py`
+- Open a web browser and go to http://localhost:5000 to access GitHub User Information Viewer.
+- Enter a GitHub username in the form, and the app will display the user's information.
 
-Run the Flask application with the following command:
-
-```bash
-python app.py
-```
-
-Visit `http://localhost:5000` in your web browser to access the app.
-
-Enter a GitHub username in the form, and the app will display the user's information. The output will look like this:
+The output will look like this:
 
 ![Github Profile Output](output/github-output.png)
