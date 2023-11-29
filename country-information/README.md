@@ -6,11 +6,13 @@ The Country Information Viewer is a Flask web application that utilizes the REST
 
 ## How it Works
 
+Various routes for different functionalities:
+
 - The home page is rendered using the `index()` function in `app.py`. This function retrieves country data from the REST Countries API using the `get_countries()` function and then renders the `index.html` template with the obtained country data.
 
 - The `get_countries()` function sends a GET request to the REST Countries API to retrieve information about all countries. It handles exceptions that may occur during the API request and returns a list of country data.
 
-Make sure to have an active internet connection as the program relies on data from the REST Countries API. If an error occurs during data fetching, appropriate error messages will be displayed.
+- Make sure to have an active internet connection as the program relies on data from the REST Countries API. If an error occurs during data fetching, appropriate error messages will be displayed.
 
 ## Program Input & Output
 
