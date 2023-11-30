@@ -4,56 +4,28 @@ The Unit Converter is a web application built using Flask that allows users to c
 
 This web application is an implementation of this [Unit Converter CLI](https://github.com/joj-macho/Pythological-Playground/tree/main/converter), providing a more user-friendly interface for unit conversions.
 
-
 ## How It Works
 
-1. **Choose a Conversion Category:**
-   - Select either "Length" or "Mass" from the dropdown menu.
+- The Flask application is initialized and configured with a secret key.
 
-2. **Enter the Value to Convert:**
-   - Input the numerical value you want to convert.
+- Conversion options are defined for length and mass, including various units such as millimeters, centimeters, meters, kilometers, inches, feet, yards, miles for length, and grams, kilograms, milligrams, pounds, ounces, tons for mass.
 
-3. **Select Units for Conversion:**
-   - For both "Unit to convert from" and "Unit to convert to," enter the respective units (e.g., mm, cm, kg, lb).
+- A history of recent conversions is maintained to display the latest conversions.
 
-4. **Click "Convert":**
-   - Press the "Convert" button to perform the conversion.
+- Two routes are defined:
+   - The index route (`/`) renders the home page where users can input conversion details.
+   - The convert route (`/convert`) handles the form submission, performs the conversion, and renders the result along with the conversion history.
 
-5. **View Results:**
-   - Instantly see the result of the conversion and view the history of recent conversions below.
+- The `perform_conversion` function calculates the result based on the selected category, unit from, and unit to, using predefined conversion factors.
 
-### Available Units
+## How to Run the Program
 
-#### Length
-- mm (Millimeter)
-- cm (Centimeter)
-- m (Meter)
-- km (Kilometer)
-- inch (Inch)
-- foot (Foot)
-- yard (Yard)
-- mile (Mile)
+- To run this application, first you must ensure that you have Python installed on your system.
+- Ensure that you have `Flask` installed on your system. If not, you can install them using pip: `pip install flask`
+- Go to the project directory.
+- Run the application on the terminal: `python3 app.py`
+- Open a web browser and go to http://localhost:5000 to access the access the Unit Converter Application.
 
-#### Mass
-- g (Gram)
-- kg (Kilogram)
-- mg (Milligram)
-- lb (Pound)
-- oz (Ounce)
-- ton (Ton)
-
-### Conversion History
-
-The application keeps track of the last 5 conversions, displaying the category, value, units, and result. This allows users to quickly reference their recent conversions.
-
-### How to Run the Application
-
-```bash
-python app.py
-```
-
-Visit `http://localhost:5000` in your web browser to use the Unit Converter.
-
-The output of the program will look like this:
+The output will look like this:
 
 ![Converter Output](output/converter-output.gif)
