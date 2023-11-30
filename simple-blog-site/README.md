@@ -1,4 +1,4 @@
-# Simple Flask Blog
+# Blog Management System
 
 ## Description
 
